@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+			* {
+				font-family: 'Poppins', sans-serif;
+				background-color: #FFD1DA;
+				text-align: center;
+				color: purple;
+			}
+
+			img {
+				clip-path: ellipse(30% 50% at center);
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+		<script src="{{ url_for('static',filename='scripts/login.js') }}"></script>
+	</head>
+	<body>
+		<div class="head_banner">
+			<h3>
+				Welcome! Please stand in front of the camera to perform facial recognition
+			</h3>
+		</div>
+		<div class="image_container">
+			<img id="cam_img" src="{{ url_for('capture') }}">
+			<div class="cam_overlay"></div>
+		</div>
+		<div id="message"></div>
+	</body>
+</html>
